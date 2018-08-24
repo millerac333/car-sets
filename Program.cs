@@ -1,6 +1,4 @@
 ﻿// Instructions
-// Pick one of the items in your show room and add it to the set again.
-// Print your showroom again, and notice how there's still only one representation of that model in there.
 // Create another set named UsedLot and add two more car model strings to it.
 // Use the UnionWith() method on Showroom to add in the two models you added to UsedLot.
 // You've sold one of your cars. Remove it from the set with the Remove() method.
@@ -31,6 +29,17 @@ namespace sets
 
             // Print to the console how many cars are in your show room.
             Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
+
+            // Pick one of the items in your show room and add it to the set again.
+            Showroom.Add("Challenger");
+
+            // Print your showroom again, and notice how there's still only one representation of that model in there.
+            Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
+
+            // Create another set named UsedLot and add two more car model strings to it.
+            HashSet<string> UsedLot = new HashSet<string>();
+            UsedLot.Add("Silverado");
+            UsedLot.Add("Pathfinder");
         }
     }
 }
