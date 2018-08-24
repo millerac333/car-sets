@@ -1,6 +1,4 @@
-﻿// Acquiring more cars
-// Now create another HashSet of cars in a variable Junkyard. Someone who owns a junkyard full of old cars has approached you about buying the entire inventory. In the new set, add some different cars, but also add a few that are the same as in the Showroom set.
-// Create a new HashSet of your show room with HashSet<string> clone = new HashSet<string>(Showroom);
+﻿// Create a new HashSet of your show room with HashSet<string> clone = new HashSet<string>(Showroom);
 // Use the IntersectWith() method on the clone to see which cars exist in both the show room and the junkyard.
 // Now you're ready to buy the cars in the junkyard. Use the UnionWith() method to combine the junkyard into your showroom.
 // Use the Remove() method to remove any cars that you acquired from the junkyard that you don't want in your showroom.
@@ -42,6 +40,15 @@ namespace sets
 
             // You've sold one of your cars. Remove it from the set with the Remove() method.
             Showroom.Remove("Challenger");
+
+            // Now create another HashSet of cars in a variable Junkyard. Someone who owns a junkyard full of old cars has approached you about buying the entire inventory. In the new set, add some different cars, but also add a few that are the same as in the Showroom set.
+            HashSet<string> JimbosJunkyard = new HashSet<string>();
+            JimbosJunkyard.Add("Tacoma");
+            JimbosJunkyard.Add("Maxima");
+            JimbosJunkyard.Add("Pathfinder");
+            JimbosJunkyard.Add("S-10");
+            JimbosJunkyard.Add("Ranger");
+            JimbosJunkyard.Add("Dakota");
         }
     }
 }
