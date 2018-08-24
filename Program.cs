@@ -1,9 +1,4 @@
-﻿// Create a new HashSet of your show room with HashSet<string> clone = new HashSet<string>(Showroom);
-// Use the IntersectWith() method on the clone to see which cars exist in both the show room and the junkyard.
-// Now you're ready to buy the cars in the junkyard. Use the UnionWith() method to combine the junkyard into your showroom.
-// Use the Remove() method to remove any cars that you acquired from the junkyard that you don't want in your showroom.
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace sets
@@ -25,6 +20,10 @@ namespace sets
 
             // Pick one of the items in your show room and add it to the set again.
             Showroom.Add("Challenger");
+            foreach (string car in Showroom)
+            {
+                Console.WriteLine($"{car}");
+            }
 
             // Print your showroom again, and notice how there's still only one representation of that model in there.
             Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
@@ -36,10 +35,19 @@ namespace sets
 
             // Use the UnionWith() method on Showroom to add in the two models you added to UsedLot.
             Showroom.UnionWith(UsedLot);
-            Console.WriteLine($"{Showroom}");
+            foreach (string car in Showroom)
+            {
+                Console.WriteLine($"{car}");
+            }
+            Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
 
             // You've sold one of your cars. Remove it from the set with the Remove() method.
             Showroom.Remove("Challenger");
+            foreach (string car in Showroom)
+            {
+                Console.WriteLine($"{car}");
+            }
+            Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
 
             // Now create another HashSet of cars in a variable Junkyard. Someone who owns a junkyard full of old cars has approached you about buying the entire inventory. In the new set, add some different cars, but also add a few that are the same as in the Showroom set.
             HashSet<string> JimbosJunkyard = new HashSet<string>();
@@ -49,6 +57,35 @@ namespace sets
             JimbosJunkyard.Add("S-10");
             JimbosJunkyard.Add("Ranger");
             JimbosJunkyard.Add("Dakota");
+            Console.WriteLine($"There are currently {JimbosJunkyard.Count} cars in the Jimbo's Junkyard");
+            foreach (string car in JimbosJunkyard)
+            {
+                Console.WriteLine($"{car}");
+            }
+
+            // Create a new HashSet of your show room with HashSet<string> clone = new HashSet<string>(Showroom);
+            HashSet<string> clone = new HashSet<string>(Showroom);
+
+            // Use the IntersectWith() method on the clone to see which cars exist in both the show room and the junkyard.
+            clone.IntersectWith(JimbosJunkyard);
+
+
+            // Now you're ready to buy the cars in the junkyard. Use the UnionWith() method to combine the junkyard into your showroom.
+            Showroom.UnionWith(JimbosJunkyard);
+            Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
+            foreach (string car in Showroom)
+            {
+                Console.WriteLine($"{car}");
+            }
+
+            // Use the Remove() method to remove any cars that you acquired from the junkyard that you don't want in your showroom.
+            Showroom.Remove("Pathfinder");
+            Showroom.Remove("S-10");
+            Console.WriteLine($"There are currently {Showroom.Count} cars in the Showroom");
+            foreach (string car in Showroom)
+            {
+                Console.WriteLine($"{car}");
+            }
         }
     }
 }
